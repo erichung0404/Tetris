@@ -68,7 +68,6 @@ def main():
 
     while True: # game loop
         runGame()
-        showTextScreen('Game Over')
 
 
 def runGame():
@@ -92,9 +91,6 @@ def runGame():
             fallingPiece = nextPiece
             nextPiece = getNewPiece()
             lastFallTime = time.time() # reset lastFallTime
-
-            if not isValidPosition(board, fallingPiece):
-                return # can't fit a new piece on the board, so game over
 
         checkForQuit()
         for event in pygame.event.get(): # event handling loop
