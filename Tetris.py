@@ -95,14 +95,7 @@ def runGame():
         checkForQuit()
         for event in pygame.event.get(): # event handling loop
             if event.type == KEYUP:
-                if (event.key == K_p):
-                    # Pausing the game
-                    DISPLAYSURF.fill(BGCOLOR)
-                    showTextScreen('Paused') # pause until a key press
-                    lastFallTime = time.time()
-                    lastMoveDownTime = time.time()
-                    lastMoveSidewaysTime = time.time()
-                elif (event.key == K_LEFT or event.key == K_a):
+                if (event.key == K_LEFT or event.key == K_a):
                     movingLeft = False
                 elif (event.key == K_RIGHT or event.key == K_d):
                     movingRight = False
