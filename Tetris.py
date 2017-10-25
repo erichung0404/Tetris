@@ -166,13 +166,7 @@ def main():
 
     showTextScreen('Tetromino')
     while True: # game loop
-        if random.randint(0, 1) == 0:
-            pygame.mixer.music.load('tetrisb.mid')
-        else:
-            pygame.mixer.music.load('tetrisc.mid')
-        pygame.mixer.music.play(-1, 0.0)
         runGame()
-        pygame.mixer.music.stop()
         showTextScreen('Game Over')
 
 
@@ -207,9 +201,7 @@ def runGame():
                 if (event.key == K_p):
                     # Pausing the game
                     DISPLAYSURF.fill(BGCOLOR)
-                    pygame.mixer.music.stop()
                     showTextScreen('Paused') # pause until a key press
-                    pygame.mixer.music.play(-1, 0.0)
                     lastFallTime = time.time()
                     lastMoveDownTime = time.time()
                     lastMoveSidewaysTime = time.time()
